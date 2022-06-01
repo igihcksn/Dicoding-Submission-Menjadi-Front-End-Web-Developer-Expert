@@ -1,0 +1,54 @@
+@import './color';
+
+main {
+    padding: 1rem 2rem;
+
+    sla-content {
+        h2 {
+            text-align: center;
+        }
+    
+        .content__wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-gap: 1rem;
+    
+            .content__card {
+                border: 2px solid $baseRock;
+                box-shadow: 0 2px 12px 0 rgb(36 50 66 / 8%);
+    
+                .content__thumbnail {
+                    position: relative;
+                    overflow: hidden;
+    
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        padding: 0.5rem;
+                        color: #000;
+                        background-color: $baseRock;
+                    }
+    
+                    img {
+                        max-width: 100%;
+                        display: block;
+
+                        &:hover {
+                            transform: scale(1.2);
+                            transition: all 0.5s ease;
+                        }
+                    }
+                }
+    
+                .content__box {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        padding: 0.5rem 1rem;
+    }
+}
