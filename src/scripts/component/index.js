@@ -1,4 +1,5 @@
 import './navbar';
 import './header';
-import './content';
+import './main';
+import './detail';
 import './footer';

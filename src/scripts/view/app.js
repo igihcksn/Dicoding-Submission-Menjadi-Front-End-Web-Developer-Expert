@@ -1,7 +1,7 @@
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
-class Main {
+class App {
   constructor({ content }) {
     this._content = content;
   }
@@ -9,9 +9,9 @@ class Main {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innetHTML = await page.render();
-    await page.afterRender();
+    const renderPage = await page.render();
+    this._content.innerHTML = renderPage;
   }
 }
 
-export default Main;
+export default App;

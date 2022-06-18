@@ -16,6 +16,10 @@ main {
             .content__card {
                 border: 2px solid $baseRock;
                 box-shadow: 0 2px 12px 0 rgb(36 50 66 / 8%);
+
+                img {
+                    max-width: 100%;
+                }
     
                 .content__thumbnail {
                     position: relative;
@@ -26,12 +30,11 @@ main {
                         bottom: 0;
                         right: 0;
                         padding: 0.5rem;
-                        color: #000;
+                        color: $baseBlack;
                         background-color: $baseRock;
                     }
     
                     img {
-                        max-width: 100%;
                         display: block;
 
                         &:hover {
@@ -43,7 +46,19 @@ main {
     
                 .content__box {
                     padding: 0 1rem;
+
+                    a {
+                        color: $baseBlack;
+                        text-decoration: none;
+                    }
                 }
+            }
+
+            .no__items {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 30vh;
             }
         }
     }

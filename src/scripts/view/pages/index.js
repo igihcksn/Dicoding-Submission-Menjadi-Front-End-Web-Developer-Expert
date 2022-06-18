@@ -1,12 +1,7 @@
 const MainPage = {
   async render() {
-    return `
-            <h2>Main Page bug</h2>
-        `;
+    return '<sla-content></sla-content>';
   },
-
-  // eslint-disable-next-line no-empty-function
-  async afterRender() {},
 };
 
 export default MainPage;
