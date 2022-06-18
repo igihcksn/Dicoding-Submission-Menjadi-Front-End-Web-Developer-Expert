@@ -1,6 +1,24 @@
+import { renderRestoCardItems, renderRestoCardNoItems } from '../../../templates/template-creator';
+import RestoDbSource from '../../data/resto-source';
+
 const MainPage = {
   async render() {
-    return '<sla-content></sla-content>';
+    return `
+      <h2>Explore Restaurant</h2>
+      <sla-content></sla-content>
+    `;
+  },
+
+  async afterRender() {
+    const contentContainer = document.querySelector('#content');
+    const resto = await RestoDbSource.listResto();
+    if (resto && resto.restaurants) {
+      resto.restaurants.forEach((restaurant) => {
+        contentContainer.innerHTML += renderRestoCardItems({ restaurant });
+      });
+    } else {
+      contentContainer.innerHTML += renderRestoCardNoItems();
+    }
   },
 };
 

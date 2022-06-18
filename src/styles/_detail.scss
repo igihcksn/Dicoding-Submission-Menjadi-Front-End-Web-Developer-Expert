@@ -2,6 +2,7 @@
 
 main {
     padding: 1rem 2rem;
+    position: relative;
 
     sla-detail {
         h2 {
@@ -37,16 +38,14 @@ main {
 
                 .content__card {
                     border: 2px solid $baseRock;
-                    display: flex;
                     padding: 1rem;
-                    gap: 1rem;
-                    align-items: center;
 
                     .content__card-rounded {
                         width: 100px;
                         height: 100px;
                         border-radius: 50%;
                         background-color: $baseRock;
+                        margin-bottom: 1rem;
                     }
 
                     p {
@@ -69,6 +68,28 @@ main {
                             height: 50px;
                         }
                     }
+                }
+            }
+        }
+
+        #favoriteButtonContainer {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+
+            .add {
+                background-color: $baseGray;
+                color: $baseBlack;
+                border: 2px solid $baseRock;
+                box-shadow: 0 2px 12px 0 rgb(36 50 66 / 8%);
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            #favoriteButtonContainer {
+                .add {
+                    padding: .5rem;
                 }
             }
         }

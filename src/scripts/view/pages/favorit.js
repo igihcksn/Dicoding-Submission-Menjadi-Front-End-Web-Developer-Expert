@@ -1,12 +1,25 @@
+import { renderRestoCardItems, renderRestoCardNoItems } from '../../../templates/template-creator';
+import FavoriteRestoIdb from '../../data/favorite-resto-idb';
+
 const FavoritPage = {
   async render() {
     return `
-            <h2>Favorit Page bug</h2>
-        `;
+      <h2>Your Favorite Restaurant</h2>
+      <sla-content></sla-content>
+    `;
   },
 
-  // eslint-disable-next-line no-empty-function
-  async afterRender() {},
+  async afterRender() {
+    const contentContainer = document.querySelector('#content');
+    const resto = await FavoriteRestoIdb.getAllResto();
+    if (resto) {
+      resto.forEach((restaurant) => {
+        contentContainer.innerHTML += renderRestoCardItems({ restaurant });
+      });
+    } else {
+      contentContainer.innerHTML += renderRestoCardNoItems();
+    }
+  },
 };
 
 export default FavoritPage;

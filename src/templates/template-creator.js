@@ -46,9 +46,9 @@ const renderRestoDetail = ({ restaurant }) => `
     <div class="content__card-detail">
         ${renderRestoResponsivePictures({ pictureId: restaurant.pictureId })}
         <div class="content__card-detail-overview">
-            <p><strong>Lokasi:</strong> ${restaurant.city}</p>
-            <p><strong>Rating:</strong> ${restaurant.rating}</p>
-            <p><strong>Category:</strong> ${restaurant.categories.map((category) => category.name)}</p>
+            <p><strong>Location:</strong> <i class="fa fa-location-arrow" aria-hidden="true"></i> ${restaurant.city}</p>
+            <p><strong>Rating:</strong> <i class="fa fa-star" aria-hidden="true"></i> ${restaurant.rating}</p>
+            <p><strong>Categories:</strong> ${restaurant.categories.map((category) => category.name)}</p>
             <p class="content__card-detail-overview_description">${restaurant.description}</p>
             <hr/>
             <h3>List Menu</h3>
@@ -76,9 +76,23 @@ const renderRestoDetail = ({ restaurant }) => `
     </div>
 `;
 
+const renderButtonAddToFavourite = () => `
+    <button aria-label="add resto to favorite" id="addToFavorite" class="add">
+        <i class="fa fa-heart-o" aria-hidden="true"></i> Add to Favorite
+    </button>
+`;
+
+const renderButtonRemoveFromFavourite = () => `
+    <button aria-label="add resto to favorite" id="removeFromFavorite" class="add">
+        <i class="fa fa-trash-o" aria-hidden="true"></i> Remove from Favorite
+    </button>
+`;
+
 export {
   renderRestoCardItems,
   renderRestoCardNoItems,
   renderRestoDetail,
   renderRestoSimpleList,
+  renderButtonAddToFavourite,
+  renderButtonRemoveFromFavourite,
 };
