@@ -88,6 +88,8 @@ const renderButtonRemoveFromFavourite = () => `
     </button>
 `;
 
+const renderLoadingInfo = () => 'Please wait... <i class="fa fa-spinner fa-pulse"></i>';
+
 export {
   renderRestoCardItems,
   renderRestoCardNoItems,
@@ -95,4 +97,5 @@ export {
   renderRestoSimpleList,
   renderButtonAddToFavourite,
   renderButtonRemoveFromFavourite,
+  renderLoadingInfo,
 };

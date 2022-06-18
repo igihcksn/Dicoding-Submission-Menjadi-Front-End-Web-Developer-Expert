@@ -5,6 +5,8 @@ class Main extends HTMLElement {
 
   async render() {
     this.innerHTML = `
+      <div id="loading" class="loading__wrapper">
+      </div>
       <div id="content" class="content__wrapper">
       </div>
     `;

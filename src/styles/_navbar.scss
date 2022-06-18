@@ -62,13 +62,14 @@
 
             .nav__burger {
                 display: block;
+                font-size: 1.25rem;
             }
         }
 
         .open {
             display: block !important;
             position: absolute;
-            top: 4rem;
+            top: 5rem;
             right: 0;
             background-color: $baseGray;
         }

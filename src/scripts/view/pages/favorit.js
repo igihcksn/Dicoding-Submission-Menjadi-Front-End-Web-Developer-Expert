@@ -1,4 +1,4 @@
-import { renderRestoCardItems, renderRestoCardNoItems } from '../../../templates/template-creator';
+import { renderLoadingInfo, renderRestoCardItems, renderRestoCardNoItems } from '../../../templates/template-creator';
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 
 const FavoritPage = {
@@ -11,7 +11,10 @@ const FavoritPage = {
 
   async afterRender() {
     const contentContainer = document.querySelector('#content');
+    const loadingContainer = document.querySelector('#loading');
+    loadingContainer.innerHTML = renderLoadingInfo();
     const resto = await FavoriteRestoIdb.getAllResto();
+    loadingContainer.remove();
     if (resto) {
       resto.forEach((restaurant) => {
         contentContainer.innerHTML += renderRestoCardItems({ restaurant });

@@ -1,4 +1,4 @@
-import { renderButtonAddToFavourite, renderRestoDetail } from '../../../templates/template-creator';
+import { renderButtonAddToFavourite, renderLoadingInfo, renderRestoDetail } from '../../../templates/template-creator';
 import RestoDbSource from '../../data/resto-source';
 import UrlParser from '../../routes/url-parser';
 import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
@@ -11,8 +11,11 @@ const DetailsPage = {
   async afterRender() {
     const contentContainer = document.querySelector('#content');
     const buttonFavorite = document.querySelector('#favoriteButtonContainer');
+    const loadingContainer = document.querySelector('#loading');
+    loadingContainer.innerHTML = renderLoadingInfo();
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const resto = await RestoDbSource.detailResto(url.id);
+    loadingContainer.remove();
     if (resto && resto.restaurant) {
       contentContainer.innerHTML += renderRestoDetail({ restaurant: resto.restaurant });
       FavoriteButtonInitiator.init({
