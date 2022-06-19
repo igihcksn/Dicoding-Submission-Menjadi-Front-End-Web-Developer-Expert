@@ -62,9 +62,11 @@
 
             .nav__burger {
                 display: block;
-                font-size: 1.25rem;
+                font-size: 2rem;
                 background: transparent;
                 border: none;
+                min-width: 44px;
+                min-height: 44px;
             }
         }
 
