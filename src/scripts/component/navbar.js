@@ -10,7 +10,7 @@ class Navbar extends HTMLElement {
             <div class="nav__logo">
                 <img src="${FindLogo}" alt="Slamet Logo" />
             </div>
-            <p id="menu" class="nav__burger" href="#" aria-label="menu burger">☰</p>
+            <button id="menu" class="nav__burger" aria-label="menu burger">☰</button>
             <ul class="nav__list">
                 <li class="nav__item"><a href="#">Home</a></li>
                 <li class="nav__item"><a href="#/favorit">Favorite</a></li>

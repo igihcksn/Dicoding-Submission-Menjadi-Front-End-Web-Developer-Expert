@@ -29,7 +29,9 @@ const renderRestoCardItems = ({ restaurant }) => `
         </div>
         <div class="content__box">
             <p class="content__box___rating">Rating: ${restaurant.rating}</p>
-            <a href="#/details/${restaurant.id}"><h3>${restaurant.name}</h3></a>
+            <a href="#/details/${restaurant.id}">
+                <h3>${restaurant.name}</h3>
+            </a>
             <p class="content__box___description">${restaurant.description.substring(0, 100)}</p>
         </div>
     </div>
@@ -49,6 +51,7 @@ const renderRestoDetail = ({ restaurant }) => `
             <p><strong>Location:</strong> <i class="fa fa-location-arrow" aria-hidden="true"></i> ${restaurant.city}</p>
             <p><strong>Rating:</strong> <i class="fa fa-star" aria-hidden="true"></i> ${restaurant.rating}</p>
             <p><strong>Categories:</strong> ${restaurant.categories.map((category) => category.name)}</p>
+            <p><strong>Adress:</strong> <i class="fa fa-map" aria-hidden="true"></i> ${restaurant.address}</p>
             <p class="content__card-detail-overview_description">${restaurant.description}</p>
             <hr/>
             <h3>List Menu</h3>

@@ -63,13 +63,15 @@
             .nav__burger {
                 display: block;
                 font-size: 1.25rem;
+                background: transparent;
+                border: none;
             }
         }
 
         .open {
             display: block !important;
             position: absolute;
-            top: 5rem;
+            top: 4.2rem;
             right: 0;
             background-color: $baseGray;
         }
