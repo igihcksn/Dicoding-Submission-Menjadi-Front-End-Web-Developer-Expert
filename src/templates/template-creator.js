@@ -17,8 +17,8 @@ const renderRestoDetailReviews = ({ review }) => `
 
 const renderRestoResponsivePictures = ({ restaurant }) => `
     <picture>
-        <source media="(min-width:465px) srcset="${CONFIG.BASE_IMAGE_URL}/smal/${restaurant.pictureId}">
-        <source media="(min-width:650px)" srcset="${CONFIG.BASE_IMAGE_URL}/medium/${restaurant.pictureId}">
+        <source media="(min-width:465px) data-src="${CONFIG.BASE_IMAGE_URL}/smal/${restaurant.pictureId}">
+        <source media="(min-width:650px)" data-src="${CONFIG.BASE_IMAGE_URL}/medium/${restaurant.pictureId}">
         <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/large/${restaurant.pictureId}" src="${CONFIG.BASE_IMAGE_URL}/large/${restaurant.pictureId}" alt="${restaurant.name}" loading="lazy">
     </picture>
 `;

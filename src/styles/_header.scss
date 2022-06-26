@@ -6,7 +6,7 @@ header {
     display: flex;
     color: $baseGray;
     background-color: $baseRock;
-    background: url('../public/images/heros/hero-image_4.jpg') no-repeat;
+    background: url('../public/images/heros/hero-image_desktop.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     align-items: center;
@@ -24,6 +24,8 @@ header {
     }
 
     @media screen and (max-width: 900px) {
+        background: url('../public/images/heros/hero-image_mobile.jpg') no-repeat;
+
         sla-header {
             margin: 1rem 0;
 
@@ -39,6 +41,7 @@ header {
 
     @media screen and (max-width: 320px) {
         height: auto;
+        background: url('../public/images/heros/hero-image_mobile.jpg') no-repeat;
 
         sla-header {
             h1 {
