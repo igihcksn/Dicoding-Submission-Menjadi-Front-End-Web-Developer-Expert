@@ -15,7 +15,7 @@ const FavoritPage = {
     loadingContainer.innerHTML = renderLoadingInfo();
     const resto = await FavoriteRestoIdb.getAllResto();
     loadingContainer.remove();
-    if (resto) {
+    if (resto && resto.length > 0) {
       resto.forEach((restaurant) => {
         contentContainer.innerHTML += renderRestoCardItems({ restaurant });
       });

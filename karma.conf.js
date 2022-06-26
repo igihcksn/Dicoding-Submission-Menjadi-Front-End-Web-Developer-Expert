@@ -40,9 +40,27 @@ module.exports = function (config) {
     },
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
+    // possible values: 'dots', 'progress', 'spec'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['spec'],
+
+    // config for specific spec reporter
+    specReporter: {
+      maxLogLines: 5, // limit number of lines logged per test
+      suppressSummary: true, // do not print summary
+      suppressErrorSummary: true, // do not print error summary
+      suppressFailed: false, // do not print information about failed tests
+      suppressPassed: false, // do not print information about passed tests
+      suppressSkipped: true, // do not print information about skipped tests
+      showBrowser: false, // print the browser for each spec
+      showSpecTiming: false, // print the time elapsed for each spec
+      failFast: true, // test would finish with error when a first fail occurs
+      prefixes: {
+        success: '    OK: ', // override prefix for passed tests, default is '✓ '
+        failure: 'FAILED: ', // override prefix for failed tests, default is '✗ '
+        skipped: 'SKIPPED: ', // override prefix for skipped tests, default is '- '
+      },
+    },
 
     // web server port
     port: 9876,
@@ -64,7 +82,7 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous

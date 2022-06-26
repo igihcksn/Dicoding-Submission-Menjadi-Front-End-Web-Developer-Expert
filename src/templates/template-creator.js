@@ -38,7 +38,7 @@ const renderRestoCardItems = ({ restaurant }) => `
 `;
 
 const renderRestoCardNoItems = () => `
-    <div class="content__card no__items" tabindex="0">
+    <div class="no__items" tabindex="0">
         <p>Ooops, Item not found</p>
     </div>
 `;
@@ -86,7 +86,7 @@ const renderButtonAddToFavourite = () => `
 `;
 
 const renderButtonRemoveFromFavourite = () => `
-    <button aria-label="add resto to favorite" id="removeFromFavorite" class="add">
+    <button aria-label="remove resto to favorite" id="removeFromFavorite" class="add">
         <i class="fa fa-trash-o" aria-hidden="true"></i> Remove from Favorite
     </button>
 `;
