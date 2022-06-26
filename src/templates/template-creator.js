@@ -1,3 +1,5 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import CONFIG from '../scripts/globals/config';
 
 const renderRestoSimpleList = ({ listName }) => `<li>${listName}</li>`;
@@ -13,11 +15,11 @@ const renderRestoDetailReviews = ({ review }) => `
     </div>
 `;
 
-const renderRestoResponsivePictures = ({ pictureId }) => `
+const renderRestoResponsivePictures = ({ restaurant }) => `
     <picture>
-        <source media="(min-width:465px) srcset="${CONFIG.BASE_IMAGE_URL}/smal/${pictureId}">
-        <source media="(min-width:650px)" srcset="${CONFIG.BASE_IMAGE_URL}/medium/${pictureId}">
-        <img src="${CONFIG.BASE_IMAGE_URL}/large/${pictureId}" alt="${name}" loading="lazy">
+        <source media="(min-width:465px) srcset="${CONFIG.BASE_IMAGE_URL}/smal/${restaurant.pictureId}">
+        <source media="(min-width:650px)" srcset="${CONFIG.BASE_IMAGE_URL}/medium/${restaurant.pictureId}">
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL}/large/${restaurant.pictureId}" src="${CONFIG.BASE_IMAGE_URL}/large/${restaurant.pictureId}" alt="${restaurant.name}" loading="lazy">
     </picture>
 `;
 
@@ -25,7 +27,7 @@ const renderRestoCardItems = ({ restaurant }) => `
     <div class="content__card" tabindex="0">
         <div class="content__thumbnail">
             <span class="city">${restaurant.city}</span>
-            ${renderRestoResponsivePictures({ pictureId: restaurant.pictureId })}
+            ${renderRestoResponsivePictures({ restaurant })}
         </div>
         <div class="content__box">
             <p class="content__box___rating">Rating: ${restaurant.rating}</p>
@@ -46,7 +48,7 @@ const renderRestoCardNoItems = () => `
 const renderRestoDetail = ({ restaurant }) => `
     <h2>${restaurant.name}</h2>
     <div class="content__card-detail">
-        ${renderRestoResponsivePictures({ pictureId: restaurant.pictureId })}
+        ${renderRestoResponsivePictures({ restaurant })}
         <div class="content__card-detail-overview">
             <p><strong>Location:</strong> <i class="fa fa-location-arrow" aria-hidden="true"></i> ${restaurant.city}</p>
             <p><strong>Rating:</strong> <i class="fa fa-star" aria-hidden="true"></i> ${restaurant.rating}</p>
