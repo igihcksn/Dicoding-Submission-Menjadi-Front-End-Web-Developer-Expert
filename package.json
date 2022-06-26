@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
     "lint": "eslint ./src",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "Inggih Wicaksono",
@@ -39,6 +40,7 @@
     "puppeteer": "^15.1.1",
     "sass": "^1.50.0",
     "sass-loader": "^10.2.1",
+    "sharp": "^0.30.7",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.1",
     "webpack": "^4.46.0",
